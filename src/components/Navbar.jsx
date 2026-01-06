@@ -11,9 +11,9 @@ const Navbar = () => {
             </div>
             <ul>
                 <li className='flex gap-3'>
-                    <a className='text-white font-semibold' href="/">Home</a>
-                    <a className='text-white font-semibold' href="">About</a>
-                    <a className='text-white font-semibold' href="">Contact Us</a>
+                    <a className='text-white hover:text-slate-200 font-semibold' href="/">Home</a>
+                    <a className='text-white hover:text-slate-200 font-semibold' href="">About</a>
+                    <a className='text-white hover:text-slate-200 font-semibold' href="">Contact Us</a>
                 </li>
             </ul>
             </div>
