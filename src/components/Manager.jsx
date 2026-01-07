@@ -12,6 +12,9 @@ const Manager = () => {
             setPasswordArray(JSON.parse(passwords))
         }
     }, [])
+    const copyText = (text) => {
+        navigator.clipboard.writeText(text)
+    }
 
     const savePassword = () => {
         setPasswordArray([...passwordArray, form])
@@ -47,40 +50,76 @@ const Manager = () => {
                     </lord-icon> Add password</button>
 
             </div>
-            <div className="showpasswordtable">
+            <div className="showpasswordtable ">
                 <h2 className='ml-[20vw] font-bold text-lg mb-2'>Your passwords</h2>
                 {passwordArray.length === 0 && <div className='text-center'>No passwords show here</div>}
                 {passwordArray.length != 0 &&
 
-                    <table class="table-auto w-[60vw] rounded-md overflow-hidden m-auto  ">
-                        <thead className='bg-green-800  text-white'>
+                    <table className="table-auto w-[70%] mx-auto my-8 rounded-xl overflow-hidden">
+                        <thead className="bg-green-800 text-white text-lg">
                             <tr>
-                                <th>Site</th>
-                                <th>Username</th>
-                                <th>Password</th>
+                                <th className="py-2 px-6 ">Site</th>
+                                <th className="py-2 px-6 ">Username</th>
+                                <th className="py-2 px-6 ">Password</th>
                             </tr>
                         </thead>
-                        <tbody className='bg-green-100  '>
-                            {passwordArray.map((item) => {
-                                return<><tr>
-                                <td className='py-2 border border-white text-center w-32 '>{item.site} </td>
-                                <td className='py-2 border border-white text-center w-30'>{item.username}</td>
-                                <td className='py-2 border border-white text-center w-30'>{item.password}</td>
-                            </tr>
-                            </>
-                            })}
-                            {/* <tr>
-                            <td className='py-2 border border-white text-center w-30'>Witchy Woman</td>
-                            <td className='py-2 border border-white text-center w-30'>The Eagles</td>
-                            <td className='py-2 border border-white text-center w-30'>1972</td>
-                        </tr>
-                        <tr>
-                            <td className='py-2 border border-white text-center w-30'>Shining Star</td>
-                            <td className='py-2 border border-white text-center w-30'>Earth, Wind, and Fire</td>
-                            <td className='py-2 border border-white text-center w-30'>1975</td>
-                        </tr> */}
+
+                        <tbody className="bg-green-100">
+                            {passwordArray.map((item, index) => (
+                                <tr
+                                    key={index}
+
+                                >
+                                    {/* SITE */}
+                                    <td className="py-2 px-4 border-1 border-white max-w-[135px]">
+                                        <div onClick={()=>{copyText(item.site)}} className="lordiconcopy flex items-center justify-between ml-12 ">
+                                            <a
+                                                href={item.site}
+                                                target="_blank"
+                                                className="text-green-900 font-medium truncate max-w-[180px]"
+                                            >
+                                                {item.site}
+                                            </a>
+                                            <lord-icon
+                                                style={{ height: "20px", width: "20px", cursor: "pointer" }}
+                                                src="https://cdn.lordicon.com/xuoapdes.json"
+                                                trigger="hover"
+                                            />
+                                        </div>
+                                    </td>
+
+                                    {/* USERNAME */}
+                                    <td className="py-3 px-6 border-1 border-white">
+                                        <div onClick={()=>{copyText(item.username)}}className="lordiconcopy flex items-center justify-between">
+                                            <span className="truncate max-w-[160px]">
+                                                {item.username}
+                                            </span>
+                                            <lord-icon
+                                                style={{ height: "20px", width: "20px", cursor: "pointer" }}
+                                                src="https://cdn.lordicon.com/xuoapdes.json"
+                                                trigger="hover"
+                                            />
+                                        </div>
+                                    </td>
+
+                                    {/* PASSWORD */}
+                                    <td className="py-3 px-6 border-1 border-white">
+                                        <div onClick={()=>{copyText(item.password)}} className="lordiconcopy flex items-center justify-between">
+                                            <span className="tracking-widest">
+                                                {item.password}
+                                            </span>
+                                            <lord-icon
+                                                style={{ height: "20px", width: "20px", cursor: "pointer" }}
+                                                src="https://cdn.lordicon.com/xuoapdes.json"
+                                                trigger="hover"
+                                            />
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
+
                 }
             </div>
         </>
