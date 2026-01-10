@@ -1,20 +1,37 @@
-<<<<<<< HEAD
-# React + Vite
+# 🔐 Pass OP – Password Manager (MERN Stack)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Pass OP is a modern, secure and feature-rich password manager web application built using the MERN stack.
+It allows users to save, edit, delete and copy their credentials with instant feedback and clean UI.
 
-Currently, two official plugins are available:
+# 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Save website URL, username & password
 
-## React Compiler
+Edit & delete saved passwords
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Copy site, username & password with one click
 
-## Expanding the ESLint configuration
+Toast notifications for all actions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# Password-Manager
->>>>>>> 831086fde168cb66a9c72406e6fa45c5fafdccd7
+Form validation – prevents empty fields
+
+LocalStorage persistence
+
+Clean responsive UI with Tailwind CSS
+
+Ready for MongoDB & Express backend integration
+
+# 🛠 Tech Stack
+Frontend	Styling	Storage	Future Backend
+React + Vite	Tailwind CSS	Browser LocalStorage	Node.js, Express.js, MongoDB
+# 📂 Project Structure
+password-manager
+ ├── src
+ │   ├── components
+ │   │     ├── Navbar.jsx
+ │   │     ├── Manager.jsx
+ │   ├── App.jsx
+ │   └── main.jsx
+ ├── public
+ ├── package.json
+ └── README.md
